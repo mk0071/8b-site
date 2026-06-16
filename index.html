@@ -1,57 +1,99 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>8B — Не просто владей. Влияй.</title>
-  <meta name="description" content="8B just started. $1 = 1 Unit. Not just own. Influence." />
+  <meta name="description" content="8B just started. $1 = 1 Unit." />
+  <meta name="theme-color" content="#f7faff" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+  <div class="page-glow" aria-hidden="true"></div>
   <header class="header">
-    <a href="#" class="brand">8B</a>
-    <div class="nav">
-      <select id="langSelect" class="select" aria-label="Language">
-        <option value="en">English</option><option value="ru">Русский</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="zh">中文</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="pt">Português</option><option value="tr">Türkçe</option><option value="id">Bahasa Indonesia</option><option value="ja">日本語</option><option value="ko">한국어</option>
+    <a class="brand" href="#">8B</a>
+    <nav class="nav">
+      <a href="#about" data-i18n="navAbout">О проекте</a>
+      <a href="#vision" data-i18n="navVision">Видение</a>
+      <a href="#transparency" data-i18n="navTransparency">Прозрачность</a>
+    </nav>
+    <div class="actions">
+      <select id="langSelect" aria-label="Language">
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+        <option value="zh">ZH</option>
       </select>
-      <button id="connectBtn" class="wallet" data-i18n="connect">Connect Wallet</button>
+      <button id="connectBtn" class="wallet-btn" data-i18n="connect">Подключить кошелёк</button>
     </div>
   </header>
   <main>
     <section class="hero">
-      <div class="eyebrow" data-i18n="started">8B just started.</div>
-      <h1>8B</h1>
-      <p class="slogan" data-i18n="slogan">Не просто владей. Влияй.</p>
-      <div class="price-wrap"><div class="price">$1</div><div class="unit" data-i18n="unit">1 Unit</div><div class="local" id="localPrice"></div></div>
-      <button id="joinBtn" class="cta"><span data-i18n="join">Join</span><b>→</b></button>
-      <p class="limited" data-i18n="limited">8,000,000,000 units. Limited.</p>
-      <div class="planet" aria-hidden="true"><div class="planet-grid"></div><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i></div>
+      <div class="dome" aria-hidden="true"></div>
+      <div class="earth" aria-hidden="true"><div class="earth-shine"></div></div>
+      <div class="hero-inner">
+        <div class="badge" data-i18n="badge">8B только начался.</div>
+        <h1>8B</h1>
+        <h2><span data-i18n="sloganLeft">Не просто владей.</span> <em data-i18n="sloganAccent">Влияй.</em></h2>
+        <p class="subtitle" data-i18n="subtitle">8 000 000 000 мест для людей по всему миру.</p>
+        <div class="price">$1</div>
+        <p class="unit" data-i18n="unit">1 Unit ≈ 92 ₽</p>
+        <button id="joinBtn" class="join-btn"><span data-i18n="join">Присоединиться</span><b>→</b></button>
+        <p class="limited"><i></i><span data-i18n="limited">Всего 8,000,000,000 units. Ограничено.</span></p>
+      </div>
     </section>
-    <section class="trust">
-      <article><h3 data-i18n="card1Title">$1 = 1 Unit</h3><p data-i18n="card1Text">A simple entry point.</p></article>
-      <article><h3 data-i18n="card2Title">Limited supply</h3><p data-i18n="card2Text">8 billion units.</p></article>
-      <article><h3 data-i18n="card3Title">USDT / USDC</h3><p data-i18n="card3Text">Crypto-first payments.</p></article>
+    <section class="cards" aria-label="Highlights">
+      <article><div class="icon icon-cube"></div><div><h3 data-i18n="card1Title">$1 = 1 Unit</h3><p data-i18n="card1Text">Простой вход в глобальный проект.</p></div></article>
+      <article><div class="icon icon-lock"></div><div><h3 data-i18n="card2Title">8,000,000,000 units</h3><p data-i18n="card2Text">Фиксированное количество. Без лишнего шума.</p></div></article>
+      <article><div class="icon icon-shield"></div><div><h3 data-i18n="card3Title">USDT / USDC</h3><p data-i18n="card3Text">Оплата в сети Polygon.</p></div></article>
     </section>
-    <section class="transparency">
-      <div><h2 data-i18n="trustTitle">Transparent by design.</h2><p data-i18n="trustText">Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.</p></div>
-      <div class="treasury"><small>treasury wallet</small><code id="treasuryText">0x0000000000000000000000000000000000000000</code></div>
+    <section class="grid" id="about">
+      <div class="about-panel">
+        <span data-i18n="aboutKicker">О 8B</span>
+        <h2 data-i18n="aboutTitle">Глобальное движение. Общее будущее.</h2>
+        <p data-i18n="aboutText">8B — цифровая точка входа в глобальную систему участия. Один unit стоит $1. Проект открыт для людей по всему миру и построен вокруг идеи масштаба, прозрачности и раннего участия.</p>
+        <a href="#vision" data-i18n="learn">Узнать больше</a>
+      </div>
+      <div class="vision-panel" id="vision">
+        <div><div class="mini-icon">◎</div><b data-i18n="pill1Title">Открыто для всех</b><p data-i18n="pill1Text">Присоединиться может каждый.</p></div>
+        <div><div class="mini-icon">◌</div><b data-i18n="pill2Title">Без границ</b><p data-i18n="pill2Text">Глобальная идея. Единая точка входа.</p></div>
+        <div><div class="mini-icon">✦</div><b data-i18n="pill3Title">Ранний этап</b><p data-i18n="pill3Text">Проект только начинает движение.</p></div>
+      </div>
+      <div class="trust-panel" id="transparency">
+        <h3 data-i18n="trustTitle">Прозрачность</h3>
+        <p data-i18n="trustText">Treasury wallet будет публичным. Транзакции доступны для проверки в блокчейне.</p>
+        <button class="ghost-btn" data-i18n="trustBtn">Смотреть Treasury</button>
+        <div class="treasury">
+          <small data-i18n="treasury">Treasury</small>
+          <code id="treasuryText">0x8B00...8B00</code>
+          <small data-i18n="network">Сеть</small>
+          <strong>Polygon</strong>
+        </div>
+      </div>
+    </section>
+    <section class="stats">
+      <div><span></span><b>8,000,000,000</b><p data-i18n="stat1">Максимум Units</p></div>
+      <div><span></span><b>0</b><p data-i18n="stat2">Продано Units</p></div>
+      <div><span></span><b>&gt; 100</b><p data-i18n="stat3">Стран</p></div>
+      <div><span></span><b data-i18n="stat4">Ранний этап</b><p data-i18n="join">Присоединиться</p></div>
     </section>
   </main>
-  <section id="modal" class="modal">
+  <footer class="footer">
+    <b>8B</b><p data-i18n="footer">© 2026 8B. Все права защищены.</p>
+    <a data-i18n="privacy">Политика конфиденциальности</a><a data-i18n="terms">Условия использования</a>
+    <div class="social">𝕏 · ◢ · ◌</div>
+  </footer>
+  <section id="modal" class="modal" aria-hidden="true">
     <div class="modal-card">
-      <button id="closeModal" class="close">×</button>
-      <h2 data-i18n="buyTitle">Join 8B</h2><p data-i18n="buyText" class="muted">Choose units and connect your wallet.</p>
-      <label data-i18n="amount">Units</label><div class="stepper"><button id="minus">−</button><input id="units" type="number" min="1" value="10" /><button id="plus">+</button></div>
-      <label data-i18n="currency">Currency</label><select id="token" class="token"><option value="USDC">USDC Polygon</option><option value="USDT">USDT Polygon</option></select>
-      <div class="total"><span>Total</span><strong id="total">$10</strong></div>
-      <div class="status" id="status" data-i18n="notConnected">Wallet not connected</div>
-      <button id="payBtn" class="pay" data-i18n="pay">Pay</button>
+      <button id="closeModal" class="close" aria-label="Close">×</button>
+      <h2 data-i18n="modalTitle">Join 8B</h2>
+      <p data-i18n="modalText">$1 = 1 Unit</p>
+      <label for="unitsInput" data-i18n="unitsLabel">Количество Units</label>
+      <input id="unitsInput" type="number" value="10" min="1" />
+      <select id="tokenSelect"><option value="USDT">USDT Polygon</option><option value="USDC">USDC Polygon</option></select>
+      <button id="payBtn" data-i18n="pay">Продолжить</button>
     </div>
   </section>
-  <footer><b>8B</b><span data-i18n="footer">Early stage. No promises. Just participation.</span></footer>
-  <script>window.I18N = {"en": {"slogan": "Not just own. Influence.", "started": "8B just started.", "limited": "8,000,000,000 units. Limited.", "join": "Join", "connect": "Connect Wallet", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "A simple entry point. Clear, fixed, minimal.", "card2Title": "Limited supply", "card2Text": "8 billion units. No noise. No excess.", "card3Title": "USDT / USDC", "card3Text": "Crypto-first payments for the early stage.", "trustTitle": "Transparent by design.", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Choose units and connect your wallet.", "amount": "Units", "currency": "Currency", "pay": "Pay", "notConnected": "Wallet not connected", "footer": "Early stage. No promises. Just participation."}, "ru": {"slogan": "Не просто владей. Влияй.", "started": "8B только начался.", "limited": "8 000 000 000 units. Ограничено.", "join": "Войти", "connect": "Подключить кошелёк", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Простой вход. Понятная цена. Минимум лишнего.", "card2Title": "Ограниченный выпуск", "card2Text": "8 миллиардов units. Без шума. Без лишнего.", "card3Title": "USDT / USDC", "card3Text": "Crypto-first оплата для раннего этапа.", "trustTitle": "Прозрачность по умолчанию.", "trustText": "Публичный treasury wallet. Платежи видны on-chain. Ранний этап. Без обещаний. Только участие.", "buyTitle": "Join 8B", "buyText": "Выбери количество units и подключи кошелёк.", "amount": "Units", "currency": "Валюта", "pay": "Оплатить", "notConnected": "Кошелёк не подключён", "footer": "Ранний этап. Без обещаний. Только участие."}, "es": {"slogan": "No solo poseas. Influye.", "started": "8B acaba de empezar.", "limited": "8.000.000.000 unidades. Limitado.", "join": "Unirse", "connect": "Conectar wallet", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Entrada simple. Clara y mínima.", "card2Title": "Oferta limitada", "card2Text": "8 mil millones de units. Sin ruido.", "card3Title": "USDT / USDC", "card3Text": "Pagos crypto-first para la fase inicial.", "trustTitle": "Transparente por diseño.", "trustText": "Treasury wallet público. Pagos visibles on-chain. Fase inicial. Sin promesas. Solo participación.", "buyTitle": "Join 8B", "buyText": "Elige units y conecta tu wallet.", "amount": "Units", "currency": "Moneda", "pay": "Pagar", "notConnected": "Wallet no conectada", "footer": "Fase inicial. Sin promesas. Solo participación."}, "fr": {"slogan": "Ne possède pas seulement. Influence.", "started": "8B vient de commencer.", "limited": "8 000 000 000 unités. Limité.", "join": "Rejoindre", "connect": "Connecter le wallet", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Entrée simple. Claire et minimale.", "card2Title": "Offre limitée", "card2Text": "8 milliards de units. Sans bruit.", "card3Title": "USDT / USDC", "card3Text": "Paiements crypto-first pour la phase initiale.", "trustTitle": "Transparent par conception.", "trustText": "Treasury wallet public. Paiements visibles on-chain. Phase initiale. Aucune promesse. Participation seulement.", "buyTitle": "Join 8B", "buyText": "Choisis tes units et connecte ton wallet.", "amount": "Units", "currency": "Devise", "pay": "Payer", "notConnected": "Wallet non connecté", "footer": "Phase initiale. Aucune promesse. Participation seulement."}, "de": {"slogan": "Nicht nur besitzen. Einfluss nehmen.", "started": "8B hat gerade begonnen.", "limited": "8.000.000.000 Units. Limitiert.", "join": "Beitreten", "connect": "Wallet verbinden", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Einfacher Einstieg. Klar und minimal.", "card2Title": "Limitierte Menge", "card2Text": "8 Milliarden Units. Ohne Lärm.", "card3Title": "USDT / USDC", "card3Text": "Crypto-first Zahlungen für die frühe Phase.", "trustTitle": "Transparent by design.", "trustText": "Öffentliche Treasury Wallet. Zahlungen on-chain sichtbar. Frühe Phase. Keine Versprechen. Nur Teilnahme.", "buyTitle": "Join 8B", "buyText": "Wähle Units und verbinde dein Wallet.", "amount": "Units", "currency": "Währung", "pay": "Zahlen", "notConnected": "Wallet nicht verbunden", "footer": "Frühe Phase. Keine Versprechen. Nur Teilnahme."}, "zh": {"slogan": "不只是拥有。去影响。", "started": "8B 刚刚开始。", "limited": "8,000,000,000 个单位。限量。", "join": "加入", "connect": "连接钱包", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "简单入口，清晰，极简。", "card2Title": "限量供应", "card2Text": "80亿 units。无噪音。", "card3Title": "USDT / USDC", "card3Text": "早期阶段的 crypto-first 支付。", "trustTitle": "默认透明。", "trustText": "公开 treasury wallet。支付 on-chain 可见。早期阶段。无承诺。仅参与。", "buyTitle": "Join 8B", "buyText": "选择 units 并连接钱包。", "amount": "Units", "currency": "货币", "pay": "支付", "notConnected": "钱包未连接", "footer": "早期阶段。无承诺。仅参与。"}, "ar": {"slogan": "لا تملك فقط. أثّر.", "started": "8B بدأ للتو.", "limited": "8,000,000,000 وحدة. محدودة.", "join": "انضم", "connect": "ربط المحفظة", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "دخول بسيط وواضح ومحدود.", "card2Title": "إصدار محدود", "card2Text": "8 مليارات وحدة. بلا ضجيج.", "card3Title": "USDT / USDC", "card3Text": "مدفوعات كريبتو للمرحلة المبكرة.", "trustTitle": "شفافية من البداية.", "trustText": "محفظة خزينة عامة. المدفوعات ظاهرة on-chain. مرحلة مبكرة. لا وعود. مشاركة فقط.", "buyTitle": "Join 8B", "buyText": "اختر عدد الوحدات واربط محفظتك.", "amount": "Units", "currency": "العملة", "pay": "ادفع", "notConnected": "المحفظة غير متصلة", "footer": "مرحلة مبكرة. لا وعود. مشاركة فقط."}, "hi": {"slogan": "सिर्फ मालिक मत बनो। प्रभाव डालो।", "started": "8B अभी शुरू हुआ है।", "limited": "8,000,000,000 यूनिट्स। सीमित।", "join": "जुड़ें", "connect": "वॉलेट कनेक्ट करें", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "सरल प्रवेश। स्पष्ट और न्यूनतम।", "card2Title": "सीमित आपूर्ति", "card2Text": "8 अरब units। बिना शोर।", "card3Title": "USDT / USDC", "card3Text": "शुरुआती चरण के लिए crypto-first भुगतान।", "trustTitle": "डिज़ाइन से पारदर्शी।", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Units चुनें और वॉलेट कनेक्ट करें।", "amount": "Units", "currency": "मुद्रा", "pay": "Pay", "notConnected": "Wallet connected नहीं है", "footer": "Early stage. No promises. Just participation."}, "pt": {"slogan": "Não apenas possua. Influencie.", "started": "8B acabou de começar.", "limited": "8.000.000.000 unidades. Limitado.", "join": "Entrar", "connect": "Conectar carteira", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Entrada simples, clara e mínima.", "card2Title": "Oferta limitada", "card2Text": "8 bilhões de units. Sem ruído.", "card3Title": "USDT / USDC", "card3Text": "Pagamentos crypto-first para a fase inicial.", "trustTitle": "Transparente por design.", "trustText": "Treasury wallet público. Pagamentos visíveis on-chain. Fase inicial. Sem promessas. Apenas participação.", "buyTitle": "Join 8B", "buyText": "Escolha units e conecte sua carteira.", "amount": "Units", "currency": "Moeda", "pay": "Pagar", "notConnected": "Carteira não conectada", "footer": "Fase inicial. Sem promessas. Apenas participação."}, "tr": {"slogan": "Sadece sahip olma. Etkile.", "started": "8B yeni başladı.", "limited": "8.000.000.000 unit. Sınırlı.", "join": "Katıl", "connect": "Cüzdan bağla", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Basit giriş. Net ve minimal.", "card2Title": "Sınırlı arz", "card2Text": "8 milyar units. Gürültü yok.", "card3Title": "USDT / USDC", "card3Text": "Erken aşama için crypto-first ödeme.", "trustTitle": "Tasarım gereği şeffaf.", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Units seç ve cüzdanı bağla.", "amount": "Units", "currency": "Para birimi", "pay": "Öde", "notConnected": "Cüzdan bağlı değil", "footer": "Early stage. No promises. Just participation."}, "id": {"slogan": "Bukan sekadar memiliki. Berpengaruh.", "started": "8B baru dimulai.", "limited": "8.000.000.000 unit. Terbatas.", "join": "Gabung", "connect": "Hubungkan wallet", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "Masuk sederhana, jelas, minimal.", "card2Title": "Pasokan terbatas", "card2Text": "8 miliar units. Tanpa noise.", "card3Title": "USDT / USDC", "card3Text": "Pembayaran crypto-first untuk tahap awal.", "trustTitle": "Transparan sejak desain.", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Pilih units dan hubungkan wallet.", "amount": "Units", "currency": "Mata uang", "pay": "Bayar", "notConnected": "Wallet belum terhubung", "footer": "Early stage. No promises. Just participation."}, "ja": {"slogan": "ただ所有するだけではない。影響を与える。", "started": "8B は始まったばかり。", "limited": "8,000,000,000 units。限定。", "join": "参加する", "connect": "ウォレット接続", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "シンプルで明確、ミニマルな入口。", "card2Title": "限定供給", "card2Text": "80億 units。余計なノイズなし。", "card3Title": "USDT / USDC", "card3Text": "初期段階の crypto-first 支払い。", "trustTitle": "透明性を前提に設計。", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Units を選びウォレットを接続。", "amount": "Units", "currency": "通貨", "pay": "支払う", "notConnected": "ウォレット未接続", "footer": "Early stage. No promises. Just participation."}, "ko": {"slogan": "소유를 넘어. 영향력을.", "started": "8B가 방금 시작되었습니다.", "limited": "8,000,000,000 유닛. 한정.", "join": "참여하기", "connect": "지갑 연결", "unit": "1 Unit", "card1Title": "$1 = 1 Unit", "card1Text": "단순하고 명확한 진입점.", "card2Title": "한정 공급", "card2Text": "80억 units. 불필요한 소음 없이.", "card3Title": "USDT / USDC", "card3Text": "초기 단계 crypto-first 결제.", "trustTitle": "투명하게 설계됨.", "trustText": "Public treasury wallet. Payments visible on-chain. Early stage. No promises. Just participation.", "buyTitle": "Join 8B", "buyText": "Units를 선택하고 지갑을 연결하세요.", "amount": "Units", "currency": "통화", "pay": "결제", "notConnected": "지갑이 연결되지 않음", "footer": "Early stage. No promises. Just participation."}};</script>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script>window.I18N = {"ru": {"title": "8B — Не просто владей. Влияй.", "navAbout": "О проекте", "navVision": "Видение", "navTransparency": "Прозрачность", "connect": "Подключить кошелёк", "badge": "8B только начался.", "sloganLeft": "Не просто владей.", "sloganAccent": "Влияй.", "subtitle": "8 000 000 000 мест для людей по всему миру.", "unit": "1 Unit ≈ 92 ₽", "join": "Присоединиться", "limited": "Всего 8,000,000,000 units. Ограничено.", "card1Title": "$1 = 1 Unit", "card1Text": "Простой вход в глобальный проект.", "card2Title": "8,000,000,000 units", "card2Text": "Фиксированное количество. Без лишнего шума.", "card3Title": "USDT / USDC", "card3Text": "Оплата в сети Polygon.", "aboutKicker": "О 8B", "aboutTitle": "Глобальное движение. Общее будущее.", "aboutText": "8B — цифровая точка входа в глобальную систему участия. Один unit стоит $1. Проект открыт для людей по всему миру и построен вокруг идеи масштаба, прозрачности и раннего участия.", "learn": "Узнать больше", "pill1Title": "Открыто для всех", "pill1Text": "Присоединиться может каждый.", "pill2Title": "Без границ", "pill2Text": "Глобальная идея. Единая точка входа.", "pill3Title": "Ранний этап", "pill3Text": "Проект только начинает движение.", "trustTitle": "Прозрачность", "trustText": "Treasury wallet будет публичным. Транзакции доступны для проверки в блокчейне.", "trustBtn": "Смотреть Treasury", "treasury": "Treasury", "network": "Сеть", "stat1": "Максимум Units", "stat2": "Продано Units", "stat3": "Стран", "stat4": "Ранний этап", "modalTitle": "Join 8B", "modalText": "$1 = 1 Unit", "unitsLabel": "Количество Units", "pay": "Продолжить", "footer": "© 2026 8B. Все права защищены.", "privacy": "Политика конфиденциальности", "terms": "Условия использования"}, "en": {"title": "8B — Not just own. Influence.", "navAbout": "About", "navVision": "Vision", "navTransparency": "Transparency", "connect": "Connect Wallet", "badge": "8B just started.", "sloganLeft": "Not just own.", "sloganAccent": "Influence.", "subtitle": "8,000,000,000 places for people around the world.", "unit": "1 Unit ≈ $1", "join": "Join", "limited": "Total 8,000,000,000 units. Limited.", "card1Title": "$1 = 1 Unit", "card1Text": "A simple entry into a global project.", "card2Title": "8,000,000,000 units", "card2Text": "Fixed supply. No noise.", "card3Title": "USDT / USDC", "card3Text": "Payment on Polygon network.", "aboutKicker": "ABOUT 8B", "aboutTitle": "A global movement. A shared future.", "aboutText": "8B is a digital entry point into a global participation system. One unit costs $1. The project is open to people around the world and built around scale, transparency and early participation.", "learn": "Learn more", "pill1Title": "Open to everyone", "pill1Text": "Anyone can join.", "pill2Title": "Borderless", "pill2Text": "A global idea. One entry point.", "pill3Title": "Early stage", "pill3Text": "The project is just starting.", "trustTitle": "Transparency", "trustText": "Treasury wallet will be public. Transactions can be verified on-chain.", "trustBtn": "View Treasury", "treasury": "Treasury", "network": "Network", "stat1": "Maximum Units", "stat2": "Units sold", "stat3": "Countries", "stat4": "Early stage", "modalTitle": "Join 8B", "modalText": "$1 = 1 Unit", "unitsLabel": "Units", "pay": "Continue", "footer": "© 2026 8B. All rights reserved.", "privacy": "Privacy Policy", "terms": "Terms of Service"}, "zh": {"title": "8B — 不只是拥有。影响未来。", "navAbout": "关于", "navVision": "愿景", "navTransparency": "透明度", "connect": "连接钱包", "badge": "8B 正在开启。", "sloganLeft": "不只是拥有。", "sloganAccent": "影响未来。", "subtitle": "面向全球用户的 8,000,000,000 个位置。", "unit": "1 Unit ≈ $1", "join": "立即参与", "limited": "总量 8,000,000,000 units。限量发行。", "card1Title": "$1 = 1 Unit", "card1Text": "进入全球项目的简单入口。", "card2Title": "8,000,000,000 units", "card2Text": "固定供应。保持简洁。", "card3Title": "USDT / USDC", "card3Text": "Polygon 网络支付。", "aboutKicker": "关于 8B", "aboutTitle": "全球数字运动。共建未来。", "aboutText": "8B 是进入全球参与系统的数字入口。每个 unit 价格为 $1。项目面向全球用户，围绕规模、透明度和早期参与而建立。", "learn": "了解更多", "pill1Title": "全球开放", "pill1Text": "任何人都可以参与。", "pill2Title": "无国界", "pill2Text": "全球理念。统一入口。", "pill3Title": "早期阶段", "pill3Text": "项目正在开始。", "trustTitle": "透明度", "trustText": "Treasury wallet 将公开。交易可在链上验证。", "trustBtn": "查看 Treasury", "treasury": "Treasury", "network": "网络", "stat1": "最大 Units", "stat2": "已售 Units", "stat3": "国家", "stat4": "早期阶段", "modalTitle": "Join 8B", "modalText": "$1 = 1 Unit", "unitsLabel": "Units", "pay": "继续", "footer": "© 2026 8B. 保留所有权利。", "privacy": "隐私政策", "terms": "使用条款"}};</script>
   <script src="./app.js"></script>
 </body>
 </html>

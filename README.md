@@ -1,24 +1,26 @@
-# 8B Premium Site
+# 8B Ultra Premium Final
 
-Премиальный минималистичный сайт 8B:
-- светлый luxury design
-- анимации
-- 13 языков
-- $1 + локальный эквивалент
-- trust blocks
-- treasury block
-- connect wallet
-- USDT/USDC payment MVP
+Финальная премиальная версия сайта 8B:
+- максимально близко к выбранному визуальному макету;
+- RU / EN / ZH;
+- большой hero с Землёй;
+- glass cards;
+- адаптация под desktop/mobile;
+- Join modal;
+- Connect Wallet placeholder.
 
-## Перед запуском
+## Как обновить сайт
+
+В GitHub замени 4 файла:
+- index.html
+- styles.css
+- app.js
+- README.md
+
+После Commit changes Vercel обновит сайт автоматически.
+
+## Перед запуском оплаты
 
 В app.js замени:
-- CONFIG.TREASURY
-- CONFIG.TOKENS.USDC.address
-- CONFIG.TOKENS.USDT.address
-
-USDT Polygon:
-0xc2132D05D31c914a87C6611C10748AEb04B58e8F
-
-USDC Polygon:
-0x3c499c542cef5e3811e1192ce70d8cc03d5c3359
+CONFIG.TREASURY
+на адрес кошелька 8B Treasury.
