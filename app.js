@@ -1,7 +1,7 @@
 const $ = (id) => document.getElementById(id);
 
 const CONFIG = {
-  TREASURY: "0x0000000000000000000000000000000000000000"
+  TREASURY: "0xA73b2C44db98a336A5729e93963a20BfdD8AEd76"
 };
 
 function applyLang(lang) {
