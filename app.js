@@ -7,6 +7,7 @@ const CONFIG = {
 function applyLang(lang) {
   const pack = window.I18N[lang] || window.I18N.ru;
   document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.title = pack.title || "8B";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -17,9 +18,9 @@ function applyLang(lang) {
 
 function detectLang() {
   const lang = (navigator.language || "ru").toLowerCase();
-  if (lang.startsWith("zh")) return "zh";
-  if (lang.startsWith("en")) return "en";
-  return "ru";
+  const supported = ["ru","en","es","fr","de","zh","ar","hi","pt","tr","id","ja","ko"];
+  for (const code of supported) { if (lang.startsWith(code)) return code; }
+  return "en";
 }
 
 async function connectWallet() {
