@@ -44,13 +44,14 @@ function closeModal() {
 }
 
 $("langSelect").addEventListener("change", (e) => applyLang(e.target.value));
-$("connectBtn").addEventListener("click", connectWallet);
 $("joinBtn").addEventListener("click", openModal);
 $("closeModal").addEventListener("click", closeModal);
 $("modal").addEventListener("click", (e) => {
   if (e.target.id === "modal") closeModal();
 });
-$("payBtn").addEventListener("click", connectWallet);
+$("payBtn").addEventListener("click", () => {
+  alert("Automatic purchase will be available after Sale Contract launch.");
+});
 
 const startLang = localStorage.getItem("8b_lang") || detectLang();
 $("langSelect").value = startLang;
