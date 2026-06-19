@@ -1,7 +1,7 @@
 *{box-sizing:border-box}
 :root{--ink:#06102d;--muted:#5f6b86;--line:rgba(29,48,95,.12);--blue:#286dff;--violet:#704cff;--pink:#c64bff}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Arial,sans-serif;background:#f9fbff;overflow-x:hidden}
+body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Arial,sans-seriff;background:#f9fbff;overflow-x:hidden}
 .page-glow{position:fixed;inset:0;z-index:-10;background:radial-gradient(circle at 8% 4%,rgba(255,238,214,.85),transparent 25%),radial-gradient(circle at 88% 6%,rgba(205,215,255,.95),transparent 36%),radial-gradient(circle at 50% 42%,rgba(255,255,255,1),transparent 31%),linear-gradient(180deg,#fbfcff 0%,#edf4ff 53%,#ffffff 100%)}
 .header{position:fixed;top:0;left:0;right:0;z-index:60;height:82px;padding:0 58px;display:grid;grid-template-columns:220px 1fr 390px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,.20));backdrop-filter:blur(22px)}
 .brand{color:var(--ink);text-decoration:none;font-size:38px;font-weight:920;letter-spacing:-.075em}.nav{display:flex;justify-content:center;gap:62px}.nav a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:780}.actions{display:flex;justify-content:flex-end;gap:12px}
