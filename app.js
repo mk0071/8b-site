@@ -245,3 +245,57 @@ applyLang(startLang);
 
 const treasury = CONFIG.TREASURY;
 $("treasuryText").textContent = `${treasury.slice(0, 6)}...${treasury.slice(-4)}`;
+
+async function add8BToMetaMask() {
+  if (!window.ethereum) {
+    alert("Откройте сайт в браузере с MetaMask");
+    return;
+  }
+
+  try {
+    await window.ethereum.request({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          address: CONFIG.TOKEN_8B,
+          symbol: "8B",
+          decimals: 18,
+          image: "https://join8b.com/token-logo.png"
+        }
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Не удалось добавить 8B в MetaMask");
+  }
+}
+
+$("addTokenBtn")?.addEventListener("click", add8BToMetaMask);
+
+async function add8BToMetaMask() {
+  if (!window.ethereum) {
+    alert("Откройте сайт в браузере с MetaMask");
+    return;
+  }
+
+  try {
+    await window.ethereum.request({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          address: CONFIG.TOKEN_8B,
+          symbol: "8B",
+          decimals: 18,
+          image: "https://join8b.com/token-logo.png"
+        }
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Не удалось добавить 8B в MetaMask");
+  }
+}
+
+$("addTokenBtn")?.addEventListener("click", add8BToMetaMask);
